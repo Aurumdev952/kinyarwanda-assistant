@@ -1,0 +1,8 @@
+transformers==4.35.2
+torch
+librosa
+numpy
+gTTS
+sentence-transformers
+gradio
+# pyaudio # Uncomment this if you have issues with Gradio's microphone input on your OS.
