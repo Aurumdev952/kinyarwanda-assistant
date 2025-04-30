@@ -25,7 +25,7 @@ It was developed as an assignment for the Intelligent Robotics course (Assigned:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-github-repo-url>
+    git clone https://github.com/Aurumdev952/kinyarwanda-assistant.git assistant
     cd assistant
     ```
 
