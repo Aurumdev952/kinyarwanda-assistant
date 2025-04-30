@@ -4,6 +4,9 @@ import noisereduce as nr
 from transformers import WhisperProcessor, WhisperForConditionalGeneration
 from collections import Counter
 
+processor = WhisperProcessor.from_pretrained("benax-rw/KinyaWhisper")
+model = WhisperForConditionalGeneration.from_pretrained("benax-rw/KinyaWhisper")
+
 def load_and_preprocess_audio(path, target_sample_rate=16000):
     # Load waveform
     waveform, sample_rate = torchaudio.load(path)
@@ -30,10 +33,7 @@ def load_and_preprocess_audio(path, target_sample_rate=16000):
 
     return trimmed, sample_rate
 
-def transcribe_cleaned_audio(waveform, sample_rate, model_name="benax-rw/KinyaWhisper"):
-    processor = WhisperProcessor.from_pretrained(model_name)
-    model = WhisperForConditionalGeneration.from_pretrained(model_name)
-
+def transcribe_cleaned_audio(waveform, sample_rate):
     # Prepare input
     inputs = processor(waveform.squeeze(0), sampling_rate=sample_rate, return_tensors="pt")
     predicted_ids = model.generate(inputs["input_features"])

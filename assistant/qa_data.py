@@ -1,5 +1,5 @@
 QA_PAIRS = {
-    "amakuru": "Ni meza, urakoze kubaza!",
+    "ndagushimira": "Urakoze cyane!, nanjye ndagushimira",
     "bite": "Ni byiza, urakoze!",
     "amakuru": "Ni meza cyane!",
     "murakoze": "Nawe urakoze!",
